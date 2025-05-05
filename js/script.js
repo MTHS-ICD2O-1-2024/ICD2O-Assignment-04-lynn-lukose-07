@@ -10,7 +10,7 @@
  * This function calculates the cost of an ice cream cone
  */
 
-function calculateCost() {
+function calculate() {
   const TAX_RATE = 0.13
   let scoopPrice = 0
   let flavorPrice = 0
@@ -29,26 +29,34 @@ function calculateCost() {
   }
 
   // select your flavor
-  if (document.getElementById("vanilla").checked) {
+  if (document.getElementById("vanilla").selected) {
     flavor = "Vanilla"
     flavorPrice = "$0"
-  } else if (document.getElementById("chocolate").checked) {
+  } else if (document.getElementById("chocolate").selected) {
     flavor = "Chocolate"
     flavorPrice = "$0.50"
-  } else if (document.getElementById("cookie-cream").checked) {
+  } else if (document.getElementById("cookie-cream").selected) {
     flavor = "Cookies and Cream"
     flavorPrice = "$1.00"
-  } else if (document.getElementById("choco-dipped-cone").checked) {
+  } else if (document.getElementById("choco-dipped-cone").selected) {
     flavor = "Chocolate dipped cone"
     flavorPrice = "$1.50"
   } else {
     // You should've selected something, or you'll just eat air...
   }
 
+  //calculate total price
 const subtotal = scoopPrice + flavorPrice
 const tax = subtotal * TAX_RATE
+const totalPrice = subtotal + tax
+
   //state what the order was
   document.getElementById("order").innerHTML =
-    "<p>You ordered " + size + " of " + flavor + "</p>"
+    <p>You ordered " + size + " of " + flavor + "</p>
+
+  // state costs
+  document.getElementById("cost").innerHTML.HTML =
+  <p>Subtotal: " + subtotal + "  Tax: " + tax + "  Total: " + totalPrice + "</p> 
+
 
 }
