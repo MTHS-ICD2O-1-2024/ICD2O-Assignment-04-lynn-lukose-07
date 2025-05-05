@@ -34,7 +34,7 @@
       href="./favicon-16x16.png"
     />
     <link rel="manifest" href="./site.webmanifest" />
-    <title>"Ice Cream Cone Cost, in JS"</title>
+    <title>Lynn's Ice Cream!</title>
   </head>
 
   <body>
@@ -43,7 +43,7 @@
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
       <header class="mdl-layout__header">
         <div class="mdl-layout__header-row">
-          <span class="mdl-layout-title">"Ice Cream Cone Cost, in JS"</span>
+          <span class="mdl-layout-title">Lynn's Ice Cream!</span>
         </div>
       </header>
       <main class="mdl-layout__content">
@@ -51,44 +51,43 @@
           <img src="./images/triangle-types.webp" alt="Triangles image" />
         </div>
         <br />
-        <div class="page-content-guide">Select which size and flavor you would like.</div>
+        <div class="page-content-guide">
+          Select how many scoops and which flavor you would like!
+        </div>
         <form>
           <div class="page-options">
             <label
               class="mdl-radio mdl-js-radio mdl-js-ripple-effect"
-              for="regular-size"
+              for="one-scoop"
             >
               <input
                 type="radio"
-                id="regular-size"
+                id="one-scoop"
                 class="mdl-radio__button"
-                name="size"
-                value="1"
-                checked
+                name="scoops"
               />
-              <span class="mdl-radio__label">Regular</span>
+              <span class="mdl-radio__label">One scoop ($1)</span>
             </label>
             <label
               class="mdl-radio mdl-js-radio mdl-js-ripple-effect"
-              for="large-size"
+              for="two-scoops"
             >
               <input
                 type="radio"
-                id="large-size"
+                id="two-scoops"
                 class="mdl-radio__button"
-                name="size"
-                value="2"
+                name="scoops"
               />
-              <span class="mdl-radio__label">Large</span>
+              <span class="mdl-radio__label">Two scoops ($1.50)</span>
             </label>
           </div>
           <br />
           <div class="mdl-textfield mdl-js-textfield">
             <select class="mdl-textfield__input" id="flavor">
-              <option value="Vanilla">Vanilla</option>
-              <option value="Chocolate">Chocolate</option>
-              <option value="Strawberry">Strawberry</option>
-              <option value="Caramel">Caramel</option>
+              <option value="vanilla">Vanilla</option>
+              <option value="chocolate">Chocolate ($ 0.50)</option>
+              <option value="cookie-cream">Cookies and cream ($ 1)</option>
+              <option value="choco-dipped-cone">Chocolate dipped cone ($ 1.50)</option>
             </select>
             <label class="mdl-textfield__label" for="flavor"
               >Ice Cream Flavor</label
@@ -101,11 +100,12 @@
             onclick="calculateCost ()"
             type="button"
           >
-            Check!
+            Order!
           </button>
         </form>
         <br />
         <div class="page-content-answer">
+          <div id="order"></div>
           <div id="cost"></div>
         </div>
       </main>
