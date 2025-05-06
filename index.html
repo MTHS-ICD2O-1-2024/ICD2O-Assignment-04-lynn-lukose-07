@@ -48,44 +48,111 @@
       </header>
       <main class="mdl-layout__content">
         <div class="right-image">
-          <img src="./images/triangle-types.webp" alt="Triangles image" />
+          <img src="./images/donuts.jpg" alt="donuts" />
         </div>
+        <div class="page-content">Select the number of scoops and the flavor you'd like!</div>
         <br />
-        <div class="page-content-guide">
-          Select how many scoops and which flavor you would like!
-        </div>
         <form>
-          <div class="page-options">
-            <label
-              class="mdl-radio mdl-js-radio mdl-js-ripple-effect"
-              for="one-scoop"
-            >
-              <input
-                type="radio"
-                id="one-scoop"
-                class="mdl-radio__button"
-                name="scoops"
-              />
-              <span class="mdl-radio__label">One scoop ($1)</span>
-            </label>
-            <label
-              class="mdl-radio mdl-js-radio mdl-js-ripple-effect"
-              for="two-scoops"
-            >
-              <input
-                type="radio"
-                id="two-scoops"
-                class="mdl-radio__button"
-                name="scoops"
-              />
-              <span class="mdl-radio__label">Two scoops ($1.50)</span>
-            </label>
-          </div>
+          <br />
+          <!-- Numeric Radio Button Group -->
+          <p>How many scoops would you like?</p>
+
+          <label
+            class="mdl-radio mdl-js-radio mdl-js-ripple-effect"
+            for="one-scoop"
+          >
+            <input
+              type="radio"
+              id="one-scoop"
+              class="mdl-radio__button"
+              name="scoops"
+              value="1"
+            />
+            <span class="mdl-radio__label">One Scoop ($1)</span>
+          </label>
+          <br />
+
+          <label
+            class="mdl-radio mdl-js-radio mdl-js-ripple-effect"
+            for="two-scoops"
+          >
+            <input
+              type="radio"
+              id="two-scoops"
+              class="mdl-radio__button"
+              name="scoops"
+              value="1.5"
+            />
+            <span class="mdl-radio__label">Two Scoops ($1.50)</span>
+          </label>
+          <br />
+          <br/>
+          <!-- Numeric Radio Button Group -->
+          <p>Pick what flavour you want!</p>
+
+          <label
+            class="mdl-radio mdl-js-radio mdl-js-ripple-effect"
+            for="vanilla"
+          >
+            <input
+              type="radio"
+              id="vanilla"
+              class="mdl-radio__button"
+              name="type"
+              value="vanilla"
+            />
+            <span class="mdl-radio__label">Vanilla ($0)</span>
+          </label>
+          <br />
+
+          <label
+            class="mdl-radio mdl-js-radio mdl-js-ripple-effect"
+            for="chocolate"
+          >
+            <input
+              type="radio"
+              id="chocolate"
+              class="mdl-radio__button"
+              name="type"
+              value="chocolate"
+            />
+            <span class="mdl-radio__label">Chocolate ($0.50)</span>
+          </label>
+          <br />
+
+          <label
+            class="mdl-radio mdl-js-radio mdl-js-ripple-effect"
+            for="cookie-cream"
+          >
+            <input
+              type="radio"
+              id="cookie-cream"
+              class="mdl-radio__button"
+              name="type"
+              value="cookie-cream"
+            />
+            <span class="mdl-radio__label">Cookies and cream ($1.00)</span>
+          </label>
+          <br />
+
+                    <label
+            class="mdl-radio mdl-js-radio mdl-js-ripple-effect"
+            for="choco-dipped-cone"
+          >
+            <input
+              type="radio"
+              id="choco-dipped-cone"
+              class="mdl-radio__button"
+              name="type"
+              value="choco-dipped-cone"
+            />
+            <span class="mdl-radio__label">Chocolate dipped cone ($1.50)</span>
+          </label>
           <br />
           <!-- Accent-colored raised button with ripple -->
           <button
             class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent"
-            onclick="calculateCost ()"
+            onclick="calculate ()"
             type="button"
           >
             Order!
@@ -94,7 +161,6 @@
         <br />
         <div class="page-content-answer">
           <div id="order"></div>
-          <div id="cost"></div>
         </div>
       </main>
     </div>

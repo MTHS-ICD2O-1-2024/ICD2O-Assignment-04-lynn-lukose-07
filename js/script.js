@@ -19,26 +19,26 @@ function calculate() {
 
   // how many scoops user would like
   if (document.getElementById("one-scoop").checked) {
-    scoopPrice = "$1.00"
+    scoopPrice = 1.00
     size = "One scoop"
   } else if (document.getElementById("two-scoops").checked) {
-    scoopPrice = "$1.50"
+    scoopPrice = 1.50
     size = "Two scoops"
   } else {
     // You should've selected something, or it's just cone...
   }
 
   // select your flavor
-  if (document.getElementById("vanilla").selected) {
+  if (document.getElementById("vanilla").checked) {
     flavor = "Vanilla"
     flavorPrice = "$0"
-  } else if (document.getElementById("chocolate").selected) {
+  } else if (document.getElementById("chocolate").checked) {
     flavor = "Chocolate"
     flavorPrice = "$0.50"
-  } else if (document.getElementById("cookie-cream").selected) {
+  } else if (document.getElementById("cookie-cream").checked) {
     flavor = "Cookies and Cream"
     flavorPrice = "$1.00"
-  } else if (document.getElementById("choco-dipped-cone").selected) {
+  } else if (document.getElementById("choco-dipped-cone").checked) {
     flavor = "Chocolate dipped cone"
     flavorPrice = "$1.50"
   } else {
@@ -47,16 +47,16 @@ function calculate() {
 
   //calculate total price
 const subtotal = scoopPrice + flavorPrice
-const tax = subtotal * TAX_RATE
-const totalPrice = subtotal + tax
+const tax = Math.round(subtotal * TAX_RATE * 100) / 100
+const totalPrice = Math.round((subtotal + tax) * 100) / 100
 
-  //state what the order was
-  document.getElementById("order").innerHTML =
-    <p>You ordered " + size + " of " + flavor + "</p>
-
-  // state costs
-  document.getElementById("cost").innerHTML.HTML =
-  <p>Subtotal: " + subtotal + "  Tax: " + tax + "  Total: " + totalPrice + "</p> 
-
-
+  // output
+  if (size != "" && flavor != "") {
+    document.getElementById("results").innerHTML =
+      "<p>Subtotal: $" + subtotal + "<br>Tax: $" + tax + "<br>Total: $" + total + "</p>"
+  } else {
+    document.getElementById("results").innerHTML =
+      "<p>Please select both the scoops and flavors so that you can get your order!</p>"
+  }
 }
+
