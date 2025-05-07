@@ -59,4 +59,3 @@ const totalPrice = Math.round((subtotal + tax) * 100) / 100
       "<p>Please select both the scoops and flavors so that you can get your order!</p>"
   }
 }
-
