@@ -53,11 +53,7 @@ const totalPrice = Math.round((subtotal + tax) * 100) / 100
   // output
   if (size != "" && flavor != "") {
     document.getElementById("order").innerHTML =
-<<<<<<< HEAD
       "<p>Subtotal: $" + subtotal + "<br>Tax: $" + tax + "<br>Total: $" + totalPrice + "</p>"
-=======
-      "<p>Subtotal: $" + subtotal + "<br>Tax: $" + tax + "<br>Total: $" + total + "</p>"
->>>>>>> 836146a80846424b8931dd4cd0f98dae1613a2d0
   } else {
     document.getElementById("order").innerHTML =
       "<p>Please select both the scoops and flavors so that you can get your order!</p>"
