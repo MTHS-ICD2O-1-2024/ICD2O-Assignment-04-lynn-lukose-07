@@ -31,16 +31,16 @@ function calculate() {
   // select your flavor
   if (document.getElementById("vanilla").checked) {
     flavor = "Vanilla"
-    flavorPrice = "$0"
+    flavorPrice = 0
   } else if (document.getElementById("chocolate").checked) {
     flavor = "Chocolate"
-    flavorPrice = "$0.50"
+    flavorPrice = 0.50
   } else if (document.getElementById("cookie-cream").checked) {
     flavor = "Cookies and Cream"
-    flavorPrice = "$1.00"
+    flavorPrice = 1.00
   } else if (document.getElementById("choco-dipped-cone").checked) {
     flavor = "Chocolate dipped cone"
-    flavorPrice = "$1.50"
+    flavorPrice = 1.50
   } else {
     // You should've selected something, or you'll just eat air...
   }
@@ -52,10 +52,22 @@ const totalPrice = Math.round((subtotal + tax) * 100) / 100
 
   // output
   if (size != "" && flavor != "") {
-    document.getElementById("order").innerHTML =
+    document.getElementById("price").innerHTML =
       "<p>Subtotal: $" + subtotal + "<br>Tax: $" + tax + "<br>Total: $" + totalPrice + "</p>"
   } else {
-    document.getElementById("order").innerHTML =
+    document.getElementById("price").innerHTML =
       "<p>Please select both the scoops and flavors so that you can get your order!</p>"
   }
+
+    if (size != "" && flavor != "") {
+      document.getElementById("order").innerHTML =
+        "<p>Size: " +
+        size +
+        "<br>Flavor: " +
+        flavor +
+        "</p>"
+    } else {
+      document.getElementById("order").innerHTML =
+        "<p>Please select both the scoops and flavors so that you can get your order!</p>"
+    }
 }
