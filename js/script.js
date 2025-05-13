@@ -47,13 +47,13 @@ function calculate() {
 
   //calculate total price
 const subtotal = scoopPrice + flavorPrice
-const tax = Math.round(subtotal * TAX_RATE * 100) / 100
-const totalPrice = Math.round((subtotal + tax) * 100) / 100
+const tax = subtotal * TAX_RATE
+const totalPrice = subtotal + tax
 
   // output
   if (size != "" && flavor != "") {
     document.getElementById("price").innerHTML =
-      "<p>Subtotal: $" + subtotal + "<br>Tax: $" + tax + "<br>Total: $" + totalPrice + "</p>"
+      "<p>Subtotal: $" + subtotal.toFixed(2) + "<br>Tax: $" + tax.toFixed(2) + "<br>Total: $" + totalPrice.toFixed(2) + "</p>"
   } else {
     document.getElementById("price").innerHTML =
       "<p>Please select both the scoops and flavors so that you can get your order!</p>"
